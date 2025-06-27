@@ -1,0 +1,66 @@
+| Collection Type         |Default Initial Capacity| Growth Formula / Capacity Formula                                                                 | Notes                                                      |
+|------------------------ |------------------------|---------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+| HashMap / HashSet /     | 16                     | newCapacity = oldCapacity * 2                                                                     | Load factor default 0.75; threshold = capacity * loadFactor|
+| LinkedHashMap /         |                        |                                                                                                   |                                                            |
+| LinkedHashSet           |                        |                                                                                                   |                                                            |
+| ArrayList               | 10                     | newCapacity = oldCapacity + (oldCapacity >> 1)   // 1.5x                                          |                                                            |
+| Vector                  | 10                     | newCapacity = oldCapacity * 2 <br>or<br>newCapacity = oldCapacity + capacityIncrement             | If capacityIncrement specified                             |
+| PriorityQueue           | 11                     | newCapacity = oldCapacity + (oldCapacity < 64 ? oldCapacity + 2 : oldCapacity >> 1)               |                                                            |
+| Stack                   | 10                     | Same as Vector                                                                                    | Stack extends Vector                                       |
+| TreeMap / TreeSet /     | N/A                    | N/A                                                                                               | Not backed by arrays; no capacity formula                  |
+| LinkedList              | Infinity               |infintiy                                                                                           |                                                            |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+# Java Collections Capacity Formula Reference
+
+## HashMap / HashSet / LinkedHashMap / LinkedHashSet
+
+- **Default initial capacity:** 16
+- **Load factor (default):** 0.75
+- **Capacity formula (after resizing):**
+    ```
+    newCapacity = oldCapacity * 2
+    ```
+- **Threshold (when to resize):**
+    ```
+    threshold = capacity * loadFactor
+    ```
+- **Constructor with initial capacity:**
+    ```
+    HashMap<K,V> map = new HashMap<>(initialCapacity, loadFactor);
+    ```
+
+## ArrayList / Vector
+
+- **Default initial capacity:** 10
+- **Capacity formula (when growing):**
+    - **ArrayList:**
+        ```
+        newCapacity = oldCapacity + (oldCapacity >> 1) // 1.5x
+        ```
+    - **Vector:**
+        ```
+        newCapacity = oldCapacity * 2
+        ```
+        or
+        ```
+        newCapacity = oldCapacity + capacityIncrement
+        ```
+        (if capacityIncrement is specified)
+
+## PriorityQueue
+
+- **Default initial capacity:** 11
+- **Capacity formula (when growing):**
+    ```
+    newCapacity = oldCapacity + (oldCapacity < 64 ? oldCapacity + 2 : oldCapacity >> 1)
+    ```
+
+## Stack
+
+- **Extends Vector, so same as Vector**
+
+---
+
+**Note:** TreeMap, TreeSet, and LinkedList do not have a capacity formula as they are not backed by arrays.

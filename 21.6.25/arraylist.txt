@@ -1,0 +1,78 @@
+/**
+ * ArrayList Methods Documentation with Input and Output Examples
+ *
+ * 1. add(E e)
+ *    - Input: list.add("Apple");
+ *    - Output: ["Apple"]
+ *
+ * 2. add(int index, E element)
+ *    - Input: list.add(1, "Banana");
+ *    - Output: ["Apple", "Banana"]
+ *
+ * 3. get(int index)
+ *    - Input: String fruit = list.get(0);
+ *    - Output: "Apple"
+ *
+ * 4. set(int index, E element)
+ *    - Input: list.set(0, "Orange");
+ *    - Output: ["Orange", "Banana"]
+ *
+ * 5. remove(int index)
+ *    - Input: list.remove(1);
+ *    - Output: ["Orange"]
+ *
+ * 6. remove(Object o)
+ *    - Input: list.remove("Orange");
+ *    - Output: []
+ *
+ * 7. size()
+ *    - Input: int count = list.size();
+ *    - Output: 0
+ *
+ * 8. isEmpty()
+ *    - Input: boolean empty = list.isEmpty();
+ *    - Output: true
+ *
+ * 9. clear()
+ *    - Input: list.clear();
+ *    - Output: []
+ *
+ * 10. contains(Object o)
+ *     - Input: list.contains("Apple");
+ *     - Output: false
+ *
+ * 11. indexOf(Object o)
+ *     - Input: list.indexOf("Banana");
+ *     - Output: -1
+ *
+ * 12. toArray()
+ *     - Input: Object[] arr = list.toArray();
+ *     - Output: []
+ *
+ * 13. addAll(Collection<? extends E> c)
+ *     - Input: list.addAll(Arrays.asList("Grape", "Melon"));
+ *     - Output: ["Grape", "Melon"]
+ *
+ * 14. subList(int fromIndex, int toIndex)
+ *     - Input: list.subList(0, 1);
+ *     - Output: ["Grape"]
+ *
+ * 15. iterator()
+ *     - Input: Iterator<String> it = list.iterator();
+ *              while (it.hasNext()) System.out.print(it.next() + " ");
+ *     - Output: Grape Melon
+ *
+ * Other methods:
+ * - addAll(int index, Collection<? extends E> c)
+ * - clone()
+ * - ensureCapacity(int minCapacity)
+ * - lastIndexOf(Object o)
+ * - listIterator()
+ * - listIterator(int index)
+ * - removeAll(Collection<?> c)
+ * - retainAll(Collection<?> c)
+ * - toArray(T[] a)
+ * - trimToSize()
+ *
+ * Refer to the official Java documentation for more details on these methods.
+ */

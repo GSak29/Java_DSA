@@ -1,0 +1,12 @@
+In a binary tree:
+
+- Searching:      Time Complexity = O(n)
+- Deletion:       Time Complexity = O(n)
+- Insertion:      Time Complexity = O(n)
+
+Types of Binary Tree
+
+- Full Binary Tree        === if the parent nodes have 0 or 2 nodes they are called as full binary tree
+- Complete Binary Tree    === fulling from left to right
+- Perfect binary Tree     === exact 2 childs and same level
+- Balanced Binary Tree    === Aka AVL tree

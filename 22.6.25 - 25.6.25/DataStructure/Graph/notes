@@ -1,0 +1,83 @@
+ ## Graph Representations and Their Time Complexities
+
+1. Dense Graph
+    - Definition: Number of edges ≈ Number of vertices² (close to maximum possible edges)
+    - Representation: Adjacency Matrix
+    - Time Complexities:
+      - Add Edge:         O(1)
+      - Remove Edge:      O(1)
+      - Check Edge:       O(1)
+      - Enumerate Neighbors: O(V) (V = number of vertices)
+      - Space:            O(V²)
+
+2. Sparse Graph
+    - Definition: Number of edges << Number of vertices² (much fewer edges)
+    - Representation: Adjacency List
+    - Time Complexities:
+      - Add Edge:         O(1)
+      - Remove Edge:      O(degree of vertex)
+      - Check Edge:       O(degree of vertex)
+      - Enumerate Neighbors: O(degree of vertex)
+      - Space:            O(V + E) (E = number of edges)
+
+Summary Table:
+
+| Operation           | Adjacency Matrix | Adjacency List      |
+|---------------------|------------------|---------------------|
+| Add Edge            | O(1)             | O(1)                |
+| Remove Edge         | O(1)             | O(degree of vertex) |
+| Check Edge          | O(1)             | O(degree of vertex) |
+| Enumerate Neighbors | O(V)             | O(degree of vertex) |
+| Space               | O(V²)            | O(V + E)            |
+---------------------------------------------------------------
+
+## Graph Traversal Algorithms
+
+### Depth-First Search (DFS)
+- Explores as far as possible along each branch before backtracking.
+- Can be implemented using recursion or an explicit stack.
+- Time Complexity: O(V + E)
+- Applications: Cycle detection, path finding, topological sort (in DAGs), connected components.
+
+### Breadth-First Search (BFS)
+- Explores all neighbors at the current depth before moving to the next level.
+- Implemented using a queue.
+- Time Complexity: O(V + E)
+- Applications: Shortest path in unweighted graphs, connectivity, bipartite check.
+
+## Shortest Path Algorithms
+
+### Unweighted Graphs
+- Use BFS to find the shortest path from a source to all other vertices.
+- Time Complexity: O(V + E)
+
+### Weighted Graphs
+- **Dijkstra's Algorithm**: Finds shortest paths from a source to all vertices (non-negative weights).
+    - Time Complexity: O((V + E) log V) with a min-heap priority queue.
+- **Bellman-Ford Algorithm**: Handles negative weights, detects negative cycles.
+    - Time Complexity: O(VE)
+- **Floyd-Warshall Algorithm**: All-pairs shortest paths.
+    - Time Complexity: O(V³)
+
+## Types of Graphs
+
+- **Directed Graph (Digraph)**: Edges have direction.
+- **Undirected Graph**: Edges have no direction.
+- **Weighted Graph**: Edges have weights/costs.
+- **Unweighted Graph**: All edges are equal.
+- **Cyclic Graph**: Contains at least one cycle.
+- **Acyclic Graph**: No cycles.
+- **Connected Graph**: There is a path between every pair of vertices (for undirected graphs).
+- **Disconnected Graph**: Not all vertices are reachable from each other.
+- **Complete Graph**: Every pair of vertices is connected by an edge.
+- **Bipartite Graph**: Vertices can be divided into two sets with edges only between sets.
+- **Tree**: Connected, acyclic, undirected graph.
+- **Forest**: Disjoint union of trees.
+- **DAG (Directed Acyclic Graph)**: Directed graph with no cycles.
+
+## Summary
+
+- Choose adjacency matrix for dense graphs, adjacency list for sparse graphs.
+- Use DFS/BFS for traversal and connectivity.
+- Use BFS for shortest path in unweighted graphs, Dijkstra/Bellman-Ford/Floyd-Warshall for weighted graphs.
+- Understand graph types to select appropriate algorithms and representations.
